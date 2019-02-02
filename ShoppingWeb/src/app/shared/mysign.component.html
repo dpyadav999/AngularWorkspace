@@ -1,0 +1,41 @@
+<form>
+    <table
+      style="width: 34%;
+    min-height: 209px;"
+    >
+      <tr>
+        <td>
+          <h3>{{ title }}</h3>
+        </td>
+      </tr>
+      <tr>
+        <td>UserName</td>
+        <td>
+          <input
+            type="text"
+            placeholder="Enter User Name"
+            class="form-control"
+            #frmUser
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" placeholder="Enter Password" class="form-control" #frmPwd/><br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="handleButtonCLick(frmUser.value,frmPwd.value)"
+          >
+            {{ title }}
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  

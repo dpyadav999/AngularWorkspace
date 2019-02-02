@@ -1,0 +1,35 @@
+<h3>Manage Categories</h3>
+<hr />
+<form>
+  <input
+    [(ngModel)]="frmCtg.id"
+    placeholder="Category ID"
+    name="txtId"
+    readonly
+  />
+  <input [(ngModel)]="frmCtg.name" placeholder="Category ID" name="txtName" />
+  <button type="menu" class="btn btn-primary" (click)="add()">Add</button>
+  <button type="menu" class="btn btn-info" (click)="update()">Update</button>
+</form>
+
+<hr />
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>Category Name</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngIf="categories.length == 0">
+    <td colspan="3"><span>No categories Found.</span></td>
+  </tr>
+
+  <tr *ngFor="let ctg of categories">
+    <td>{{ ctg.id }}</td>
+    <td>{{ ctg.name }}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(ctg.id)">Delete</button>
+      <button class="btn btn-success" (click)="edit(ctg)">Edit</button>
+    </td>
+  </tr>
+</table>
